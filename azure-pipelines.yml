@@ -23,7 +23,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      rite-Host "Generating Build Number"
+      Write-Host "Generating Build Number"
       $baseDate = [datetime]"01/01/2000"
       $currentDate = $(Get-Date)
       $interval = NEW-TIMESPAN –Start $baseDate –End $currentDate
