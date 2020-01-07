@@ -43,7 +43,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '**/TestWinform/bin/Release'
+    PathtoPublish: '/TestWinform/bin/Release'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
