@@ -42,18 +42,13 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: DotNetCoreCLI@2
-  displayName: 'Publish the project - $(buildConfiguration)'
-  inputs:
-    command: 'publish'
-    projects: '**/*.csproj'
-    publishWebProjects: false
-    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-    zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
+  inputs:
+    PathtoPublish: '$(buildConfiguration)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container' 
+
 
 - task: VSTest@2
   inputs:
