@@ -40,7 +40,6 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArgs: '/p:version=1.0.0'
 
 - task: PublishBuildArtifacts@1
   inputs:
